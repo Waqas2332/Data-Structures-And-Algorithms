@@ -37,7 +37,11 @@ void insertOne(struct Array *a, int value)
         {
             p[i] = a->A[i];
         }
+        // de-allocation and re-allocation of arrays
+        free(a->A);
         a->A = p;
+        p = NULL;
+        // END
         a->size = a->size * 2;
     }
     a->A[a->length] = value;
