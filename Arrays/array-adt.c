@@ -15,7 +15,6 @@ void initialize(struct Array *a)
     a->size = 5;
     a->A = (int *)malloc(a->size * sizeof(int));
 }
-
 void display(struct Array *a)
 {
     printf("\nSize of Array is %d", a->size);
