@@ -28,6 +28,17 @@ void insertNode()
     }
 }
 
+void display()
+{
+    struct Node *temp = first;
+    while (temp != NULL)
+    {
+        printf("%d -> ", temp->data);
+        temp = temp->next;
+    }
+    printf("end");
+}
+
 int main()
 {
     int menu;       // For prompting Menu
@@ -36,7 +47,7 @@ int main()
     // Logic For Menu display
     while (isTrue)
     {
-        printf("\nEnter 1 For Displaying Linked List, 0 for closing the program : ");
+        printf("\nEnter 1 For Displaying Linked List,2 for Inserting Element in Linked List, 0 for closing the program : ");
         scanf("%d", &menu);
         if (menu == 0)
         {
@@ -44,6 +55,13 @@ int main()
         }
         if (menu == 1)
         {
+            display();
+            continue;
+        }
+        if (menu == 2)
+        {
+            printf("\nEnter the value to be inserted in linked list");
+            insertNode();
             continue;
         }
     }
