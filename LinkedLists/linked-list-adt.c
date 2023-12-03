@@ -31,12 +31,26 @@ void insertNode()
 void display()
 {
     struct Node *temp = first;
+    int count = 0, sum = 0, max = first->data, min = first->data;
     while (temp != NULL)
     {
         printf("%d -> ", temp->data);
+        count++;           // counting number of elements in linked list
+        sum += temp->data; // sum of all elements in linked list
+
+        if (temp->data > max)
+        {
+            max = temp->data;
+        }
+
+        if (temp->data < min)
+        {
+            min = temp->data;
+        }
         temp = temp->next;
     }
     printf("end");
+    printf("\nNumber of elements in linked lists : %d\nSum of all elements in linked list : %d\nMaximum element in linked list : %d\nMinimum Element in Linked List : %d", count, sum, max, min);
 }
 
 int main()
@@ -47,7 +61,7 @@ int main()
     // Logic For Menu display
     while (isTrue)
     {
-        printf("\nEnter 1 For Displaying Linked List,2 for Inserting Element in Linked List, 0 for closing the program : ");
+        printf("\nEnter 1 For Displaying info about Linked List,2 for Inserting Element in Linked List, 0 for closing the program : ");
         scanf("%d", &menu);
         if (menu == 0)
         {
@@ -60,7 +74,7 @@ int main()
         }
         if (menu == 2)
         {
-            printf("\nEnter the value to be inserted in linked list");
+            printf("\nEnter the value to be inserted in linked list : ");
             insertNode();
             continue;
         }
