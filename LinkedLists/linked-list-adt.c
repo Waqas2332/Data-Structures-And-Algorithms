@@ -5,14 +5,32 @@ struct Node
 {
     int data;
     struct Node *next;
-};
+}
+    // Created pointer of the Node type globally so it can be directly accessed in any function
+    *first = NULL,
+    *last = NULL;
+
+void insertNode()
+{
+    struct Node *p = (struct Node *)malloc(sizeof(struct Node));
+    scanf("%d", &p->data);
+    if (first == NULL)
+    {
+        first = p;
+        first->next = NULL;
+        last = first;
+    }
+    else
+    {
+        p->next = NULL;
+        last->next = p;
+        last = p;
+    }
+}
 
 int main()
 {
-    struct Node *p = (struct Node *)malloc(sizeof(struct Node));
-    p->data = 10;
     int menu;       // For prompting Menu
-    int value;      // For inserting value
     int isTrue = 1; // While loop control
 
     // Logic For Menu display
