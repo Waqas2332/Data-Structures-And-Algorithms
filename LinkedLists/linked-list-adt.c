@@ -70,6 +70,21 @@ void searchNode(int value)
     printf("%d is not found in Linked List", value);
 }
 
+void reverse()
+{
+    struct Node *p = first;
+    struct Node *q = NULL;
+    struct Node *r = NULL;
+    while (p != NULL)
+    {
+        r = q;
+        q = p;
+        p = p->next;
+
+        q->next = r;
+    }
+}
+
 int main()
 {
     int menu;       // For prompting Menu
