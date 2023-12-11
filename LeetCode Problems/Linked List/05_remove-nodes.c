@@ -27,15 +27,26 @@ struct ListNode *createList(int arr[], int size)
 
 struct ListNode *removeElements(struct ListNode *head, int val)
 {
-    struct ListNode *p = head;
-    while (p != NULL)
-    {
-        if (p->next->val == val)
-        {
-            p->next = p->next->next;
-        }
-        p = p->next;
+     struct ListNode *p = head;
+    struct ListNode *q = NULL;
+
+     while (p != NULL && p->val == val) {
+        head = p->next;
+        free(p); 
+        p = head; 
     }
+
+    while(p != NULL){
+        if(p->val == val){
+            q->next = p->next;
+            free(p);
+            p = q->next;
+        }else{
+            q = p;
+            p = p->next;
+        }
+    }
+    
     return head;
 }
 
