@@ -1,3 +1,5 @@
+#include <stdio.h>
+
 int maxSubArray(int *nums, int numsSize)
 {
     int currSum = 0;
@@ -18,4 +20,7 @@ int maxSubArray(int *nums, int numsSize)
         }
     }
     return maxSum;
+}
+int main()
+{
 }
